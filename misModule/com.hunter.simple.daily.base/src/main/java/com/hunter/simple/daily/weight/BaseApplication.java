@@ -12,7 +12,7 @@ public class BaseApplication {
     public static void main(String[] args) {
         SpringApplication.run(BaseApplication.class, args);
         FrameworkVo frameworkVo = new FrameworkVo();
-        System.out.println("======启动完成======");
+        System.out.println("======base应用启动完成======");
     }
 
 }

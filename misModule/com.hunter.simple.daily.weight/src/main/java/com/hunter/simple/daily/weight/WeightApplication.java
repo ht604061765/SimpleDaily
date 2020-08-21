@@ -15,7 +15,7 @@ public class WeightApplication {
         SpringApplication.run(WeightApplication.class, args);
         FrameworkVo frameworkVo = new FrameworkVo();
         String aaa = StringUtils.removeBlank("   asdg   ", RemoveBlankTypeEnum.ALL);
-        System.out.println("======体重应用启动完成======" + aaa);
+        System.out.println("======体重应用启动完成======");
     }
 
 }

@@ -17,6 +17,7 @@ import java.util.UUID;
 
 /**
  * @description 防止表单重复提交拦截器
+ * 后续要优化为把请求信息存储到redis
  * @author Administrator
  * @date 2020/8/25
  **/

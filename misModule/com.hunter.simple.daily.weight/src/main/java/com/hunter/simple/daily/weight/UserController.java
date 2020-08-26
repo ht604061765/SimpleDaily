@@ -1,6 +1,6 @@
 package com.hunter.simple.daily.weight;
 
-import com.hunter.base.framework.DuplicateSubmitToken;
+import com.hunter.base.framework.annotation.duplicatesubmit.DuplicateSubmit;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +19,7 @@ import java.util.Map;
 public class UserController {
 
     @GetMapping("/test")
-    @DuplicateSubmitToken
+    @DuplicateSubmit
     public Map<String, Object> test (HttpServletRequest request){
         System.out.println("===开始执行方法===");
         try {

@@ -1,4 +1,4 @@
-package com.hunter.base.framework;
+package com.hunter.base.framework.annotation.duplicatesubmit;
 
 import java.lang.annotation.*;
 
@@ -11,7 +11,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 @Documented
-public @interface DuplicateSubmitToken {
+public @interface DuplicateSubmit {
 
     /**
      * 保存重复提交标记 默认为需要保存

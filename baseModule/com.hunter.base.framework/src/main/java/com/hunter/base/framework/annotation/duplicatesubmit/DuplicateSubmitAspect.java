@@ -1,4 +1,4 @@
-package com.hunter.base.framework;
+package com.hunter.base.framework.annotation.duplicatesubmit;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -26,14 +26,23 @@ public class DuplicateSubmitAspect {
 
     private Log logger = LogFactory.getLog(getClass());
 
-    public static final String  DUPLICATE_TOKEN_KEY="DUPLICATE_TOKEN_KEY";
+    /**
+     * 会话重复判断用Key
+     */
+    public static final String  DUPLICATE_TOKEN_KEY = "DUPLICATE_TOKEN_KEY";
 
-    @Pointcut("@annotation(com.hunter.base.framework.DuplicateSubmitToken)")
+    /**
+     * 指定作用范围
+     */
+    @Pointcut("@annotation(com.hunter.base.framework.annotation.duplicatesubmit.DuplicateSubmit)")
     public void pointcut() {
     }
 
+    /**
+     * 接口执行前拦截
+     */
     @Before("pointcut() && @annotation(token)")
-    public void before(final JoinPoint joinPoint, DuplicateSubmitToken token) {
+    public void before(final JoinPoint joinPoint, DuplicateSubmit token) {
         System.out.println("方法执行前拦截");
         if (!Objects.isNull(token)){
             ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -57,8 +66,11 @@ public class DuplicateSubmitAspect {
 
     }
 
+    /**
+     * 接口返回后执行
+     */
     @AfterReturning("pointcut() && @annotation(token)")
-    public void afterReturning(final JoinPoint joinPoint, DuplicateSubmitToken token) {
+    public void afterReturning(final JoinPoint joinPoint, DuplicateSubmit token) {
         System.out.println("方法执行后拦截");
         if (token != null){
             ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -75,7 +87,7 @@ public class DuplicateSubmitAspect {
     }
 
 //    @AfterThrowing(pointcut = "pointcut()", throwing = "e")
-//    public void doAfterThrowing(JoinPoint joinPoint, Throwable e, DuplicateSubmitToken token) {
+//    public void doAfterThrowing(JoinPoint joinPoint, Throwable e, DuplicateSubmit token) {
 //        if (null != token){
 //            //处理处理重复提交本身之外的异常
 //            ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -96,8 +108,6 @@ public class DuplicateSubmitAspect {
 
     /**
      * 获取重复提交key
-     * @param joinPoint
-     * @return
      **/
     private String getDuplicateTokenKey(JoinPoint joinPoint) {
         String methodName = joinPoint.getSignature().getName();

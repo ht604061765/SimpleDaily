@@ -1,6 +1,6 @@
 package com.hunter.simple.daily.weight;
 
-import com.ygsoft.esc.cwjy.framework.FrameworkVo;
+import com.hunter.base.framework.FrameworkVo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;

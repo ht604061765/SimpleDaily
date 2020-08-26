@@ -1,24 +1,30 @@
-#Í¨ÓÃÊı¾İÔ´ÅäÖÃ
+# é€šç”¨æ•°æ®æºé…ç½®
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/simple_daily?charset=utf8mb4&useSSL=false&serverTimezone=UTC
     username: root
     password: password
-  hikari:
-    minimum-idle: 5
-    # ¿ÕÏĞÁ¬½Ó´æ»î×î´óÊ±¼ä£¬Ä¬ÈÏ600000£¨10·ÖÖÓ£©
-    idle-timeout: 180000
-    # Á¬½Ó³Ø×î´óÁ¬½ÓÊı£¬Ä¬ÈÏÊÇ10
-    maximum-pool-size: 10
-    # ´ËÊôĞÔ¿ØÖÆ´Ó³Ø·µ»ØµÄÁ¬½ÓµÄÄ¬ÈÏ×Ô¶¯Ìá½»ĞĞÎª,Ä¬ÈÏÖµ£ºtrue
-    auto-commit: true
-    # Á¬½Ó³ØÃû³Æ
-    pool-name: MyHikariCP
-    # ´ËÊôĞÔ¿ØÖÆ³ØÖĞÁ¬½ÓµÄ×î³¤ÉúÃüÖÜÆÚ£¬Öµ0±íÊ¾ÎŞÏŞÉúÃüÖÜÆÚ£¬Ä¬ÈÏ1800000¼´30·ÖÖÓ
-    max-lifetime: 1800000
-    # Êı¾İ¿âÁ¬½Ó³¬Ê±Ê±¼ä,Ä¬ÈÏ30Ãë£¬¼´30000
-    connection-timeout: 30000
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500
+        min-idle: 0
+      lettuce:
+        shutdown-timeout: 0
+  hikari: # æ•°æ®åº“è¿æ¥æ± 
+    minimum-idle: 5 # è¿æ¥æ± ç©ºé—²è¿æ¥çš„æœ€å°æ•°é‡
+    idle-timeout: 180000 # ç©ºé—²è¿æ¥å­˜æ´»æœ€å¤§æ—¶é—´ï¼Œé»˜è®¤600000ï¼ˆ10åˆ†é’Ÿï¼‰
+    maximum-pool-size: 10 # è¿æ¥æ± æœ€å¤§è¿æ¥æ•°ï¼Œé»˜è®¤æ˜¯10
+    auto-commit: true # æ­¤å±æ€§æ§åˆ¶ä»æ± è¿”å›çš„è¿æ¥çš„é»˜è®¤è‡ªåŠ¨æäº¤è¡Œä¸º,é»˜è®¤å€¼ï¼štrue
+    pool-name: MyHikariCP # è¿æ¥æ± åç§°
+    max-lifetime: 1800000 # æ­¤å±æ€§æ§åˆ¶æ± ä¸­è¿æ¥çš„æœ€é•¿ç”Ÿå‘½å‘¨æœŸï¼Œå€¼0è¡¨ç¤ºæ— é™ç”Ÿå‘½å‘¨æœŸï¼Œé»˜è®¤1800000å³30åˆ†é’Ÿ
+    connection-timeout: 30000 # æ•°æ®åº“è¿æ¥è¶…æ—¶æ—¶é—´,é»˜è®¤30ç§’ï¼Œå³30000
     connection-test-query: SELECT 1
   jpa:
     show-sql: true

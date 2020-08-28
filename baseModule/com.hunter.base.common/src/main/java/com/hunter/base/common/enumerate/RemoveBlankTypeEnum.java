@@ -1,4 +1,4 @@
-package com.hunter.base.common.vo;
+package com.hunter.base.common.enumerate;
 
 public enum RemoveBlankTypeEnum {
 

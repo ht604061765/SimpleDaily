@@ -1,12 +1,11 @@
 package com.hunter.simple.daily.weight;
 
 import com.hunter.base.common.utils.StringUtils;
-import com.hunter.base.common.vo.RemoveBlankTypeEnum;
+import com.hunter.base.common.enumerate.RemoveBlankTypeEnum;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @ComponentScan(basePackages = {"com.hunter"})
 @ServletComponentScan

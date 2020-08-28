@@ -1,6 +1,6 @@
 package com.hunter.base.common.utils;
 
-import com.hunter.base.common.vo.RemoveBlankTypeEnum;
+import com.hunter.base.common.enumerate.RemoveBlankTypeEnum;
 
 import java.util.Objects;
 import java.util.regex.Pattern;

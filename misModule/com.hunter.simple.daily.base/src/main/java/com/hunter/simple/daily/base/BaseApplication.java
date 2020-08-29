@@ -1,4 +1,4 @@
-package com.hunter.simple.daily.weight;
+package com.hunter.simple.daily.base;
 
 import com.hunter.base.framework.FrameworkVo;
 import org.springframework.boot.SpringApplication;

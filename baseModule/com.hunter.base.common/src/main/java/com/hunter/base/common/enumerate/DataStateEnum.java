@@ -5,11 +5,11 @@ package com.hunter.base.common.enumerate;
  * @author hantao
  * @date 2020/08/19
  */
-public enum DataState {
+public enum DataStateEnum {
 
-    NORMAL("启用"),
+    NORMAL("正常"),
 
-    CANCEL("作废"),
+    DELETE("删除"),
 
     STOP("停用"),
 
@@ -19,7 +19,7 @@ public enum DataState {
 
     private String name;
 
-    DataState(String name) {
+    DataStateEnum(String name) {
         this.name = name;
     }
 

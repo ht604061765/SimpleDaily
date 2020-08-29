@@ -1,4 +1,4 @@
-package com.hunter.simple.daily.weight;
+package com.hunter.simple.daily.web;
 
 import com.hunter.base.common.utils.StringUtils;
 import com.hunter.base.common.enumerate.RemoveBlankTypeEnum;

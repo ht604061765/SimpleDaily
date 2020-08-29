@@ -2,19 +2,20 @@ package com.hunter.base.common.vo;
 
 import lombok.Data;
 
-import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 /**
  * @author Administrator
  * @date 2020/8/28
  **/
 @Data
-public class HunterBaseVo {
+@MappedSuperclass
+public class HunterBaseVo implements Serializable {
 
     /**
      * 主键Gid
      */
-    @Id
     private String gid;
 
     /**

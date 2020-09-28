@@ -7,6 +7,7 @@ import com.hunter.simple.daily.weight.record.service.domain.vo.WeightRecordVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -28,5 +29,10 @@ public class WeightRecordService extends HunterBaseService implements IWeightRec
     public static String getUUID() {
         UUID id = UUID.randomUUID();
         return id.toString().replace("-", "");
+    }
+
+    @Override
+    public List<WeightRecordVo> getWeightList() {
+        return getDao().findAll();
     }
 }

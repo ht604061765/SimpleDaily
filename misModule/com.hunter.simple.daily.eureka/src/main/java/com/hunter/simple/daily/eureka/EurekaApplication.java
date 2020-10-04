@@ -12,15 +12,4 @@ public class EurekaApplication {
         SpringApplication.run(EurekaApplication.class, args);
         System.out.println("======EurekaApplication 应用启动完成======");
     }
-
-//    @EnableWebSecurity
-//    public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
-//
-//        @Override
-//        protected void configure(HttpSecurity http) throws Exception {
-//            http.csrf().disable();
-//            super.configure(http);
-//        }
-//    }
-
 }

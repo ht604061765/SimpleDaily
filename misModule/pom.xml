@@ -19,6 +19,7 @@
         <module>com.hunter.simple.daily.base</module>
         <module>com.hunter.simple.daily.weight</module>
         <module>com.hunter.simple.daily.web</module>
+        <module>com.hunter.simple.daily.eureka</module>
     </modules>
 
     <dependencies>

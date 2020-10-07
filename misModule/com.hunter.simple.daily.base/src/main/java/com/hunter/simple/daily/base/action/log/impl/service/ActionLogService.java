@@ -1,5 +1,6 @@
 package com.hunter.simple.daily.base.action.log.impl.service;
 
+import com.hunter.base.common.utils.RandomUtils;
 import com.hunter.base.common.vo.ActionLogVo;
 import com.hunter.base.common.feign.BaseServerFeign;
 import com.hunter.base.common.service.HunterBaseService;
@@ -28,14 +29,11 @@ public class ActionLogService extends HunterBaseService implements IActionLogSer
     public void addActionLog(ActionLogVo vo){
         ActionLog actionLog = new ActionLog();
         BeanUtils.copyProperties(vo, actionLog);
-        actionLog.setGid(getUUID());
+        actionLog.setGid(RandomUtils.getUUID());
         actionLogDao.save(actionLog);
         System.out.println("调用成功！");
     }
 
-    public static String getUUID() {
-        UUID id = UUID.randomUUID();
-        return id.toString().replace("-", "");
-    }
+
 
 }

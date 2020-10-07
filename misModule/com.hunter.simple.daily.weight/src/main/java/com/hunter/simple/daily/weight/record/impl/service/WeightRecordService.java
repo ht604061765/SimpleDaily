@@ -2,6 +2,7 @@ package com.hunter.simple.daily.weight.record.impl.service;
 
 import com.hunter.base.common.feign.BaseServerFeign;
 import com.hunter.base.common.service.HunterBaseService;
+import com.hunter.base.common.utils.RandomUtils;
 import com.hunter.simple.daily.weight.record.service.IWeightRecordService;
 import com.hunter.simple.daily.weight.record.service.dao.IWeightRecordDao;
 import com.hunter.simple.daily.weight.record.service.domain.po.WeightRecord;
@@ -35,14 +36,9 @@ public class WeightRecordService extends HunterBaseService implements IWeightRec
     public WeightRecordVo addWeightRecord(WeightRecordVo vo) {
         WeightRecord weightRecord = new WeightRecord();
         BeanUtils.copyProperties(vo,weightRecord);
-        weightRecord.setGid(getUUID());
+        weightRecord.setGid(RandomUtils.getUUID());
         weightRecordDao.save(weightRecord);
         return vo;
-    }
-
-    public static String getUUID() {
-        UUID id = UUID.randomUUID();
-        return id.toString().replace("-", "");
     }
 
     @Override

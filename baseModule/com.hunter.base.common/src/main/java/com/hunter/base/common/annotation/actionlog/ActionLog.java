@@ -1,4 +1,4 @@
-package com.hunter.base.framework.annotation.action;
+package com.hunter.base.common.annotation.actionlog;
 
 import java.lang.annotation.*;
 

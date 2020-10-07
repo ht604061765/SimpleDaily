@@ -1,4 +1,4 @@
-package com.hunter.base.framework.annotation.duplicatesubmit;
+package com.hunter.base.common.annotation.duplicatesubmit;
 
 import java.lang.annotation.*;
 

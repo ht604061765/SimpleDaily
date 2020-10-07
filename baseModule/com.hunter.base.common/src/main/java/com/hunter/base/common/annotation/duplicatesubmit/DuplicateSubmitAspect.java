@@ -1,4 +1,4 @@
-package com.hunter.base.framework.annotation.duplicatesubmit;
+package com.hunter.base.common.annotation.duplicatesubmit;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -35,7 +35,7 @@ public class DuplicateSubmitAspect {
     /**
      * 指定作用范围
      */
-    @Pointcut("@annotation(com.hunter.base.framework.annotation.duplicatesubmit.DuplicateSubmit)")
+    @Pointcut("@annotation(com.hunter.base.common.annotation.duplicatesubmit.DuplicateSubmit)")
     public void pointcut() {
     }
 

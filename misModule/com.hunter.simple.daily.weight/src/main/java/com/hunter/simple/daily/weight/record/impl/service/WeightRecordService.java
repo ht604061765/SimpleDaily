@@ -1,5 +1,6 @@
 package com.hunter.simple.daily.weight.record.impl.service;
 
+import com.hunter.base.common.feign.BaseServerFeign;
 import com.hunter.base.common.service.HunterBaseService;
 import com.hunter.simple.daily.weight.record.service.IWeightRecordService;
 import com.hunter.simple.daily.weight.record.service.dao.IWeightRecordDao;
@@ -25,7 +26,10 @@ import java.util.UUID;
 public class WeightRecordService extends HunterBaseService implements IWeightRecordService {
 
     @Autowired
-    IWeightRecordDao weightRecordDao;
+    private IWeightRecordDao weightRecordDao;
+
+    @Autowired
+    private BaseServerFeign baseServerFeign;
 
     @Override
     public WeightRecordVo addWeightRecord(WeightRecordVo vo) {

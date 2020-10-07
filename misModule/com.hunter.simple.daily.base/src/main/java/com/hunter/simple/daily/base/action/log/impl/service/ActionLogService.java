@@ -10,6 +10,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 /**
  * @author Administrator
  * @date 2020/10/5
@@ -26,8 +28,14 @@ public class ActionLogService extends HunterBaseService implements IActionLogSer
     public void addActionLog(ActionLogVo vo){
         ActionLog actionLog = new ActionLog();
         BeanUtils.copyProperties(vo, actionLog);
+        actionLog.setGid(getUUID());
         actionLogDao.save(actionLog);
         System.out.println("调用成功！");
+    }
+
+    public static String getUUID() {
+        UUID id = UUID.randomUUID();
+        return id.toString().replace("-", "");
     }
 
 }

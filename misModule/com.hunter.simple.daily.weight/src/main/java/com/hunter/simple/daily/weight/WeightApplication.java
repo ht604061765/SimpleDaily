@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan(basePackages = {"com.hunter"})
-@EnableFeignClients(basePackages = "com.hunter.base.common.feign")
+@EnableFeignClients(basePackages = {"com.hunter"})
 @ServletComponentScan
 @SpringBootApplication
 @EnableEurekaClient
@@ -16,7 +16,6 @@ public class WeightApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(WeightApplication.class, args);
-        System.out.println("======体重应用启动完成======");
     }
 
 }

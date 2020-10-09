@@ -5,9 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan(basePackages = {"com.hunter"})
+@EnableFeignClients(basePackages = "com.hunter")
 @ServletComponentScan
 @SpringBootApplication
 @EnableEurekaClient
@@ -16,7 +18,7 @@ public class ZuulApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ZuulApplication.class, args);
-        System.out.println("======Zuul 应用启动完成======");
+        System.out.println("====== ZuulApplication 启动完成 ======");
     }
 
 }

@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan(basePackages = {"com.hunter"})
-@EnableFeignClients(basePackages = "com.hunter.base.common.feign")
+@EnableFeignClients(basePackages = {"com.hunter"})
 @ServletComponentScan
 @SpringBootApplication
 @EnableEurekaClient

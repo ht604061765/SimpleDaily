@@ -22,8 +22,9 @@ public class ActionLogAspect {
 
     @Autowired
     private BaseServerFeign baseServerFeign;
+
     /**
-     * 指定作用范围
+     * 指定生效域
      */
     @Pointcut("@annotation(com.hunter.base.common.annotation.actionlog.ActionLog)")
     public void pointcut() {
@@ -35,14 +36,11 @@ public class ActionLogAspect {
     @Before("pointcut() && @annotation(actionLog)")
     public void before(final JoinPoint joinPoint, ActionLog actionLog) {
         ActionLogVo logVo = new ActionLogVo();
-        System.out.println("方法执行前拦截");
         if(!Objects.isNull(actionLog)){
-            System.out.println(actionLog.description());
             logVo.setDescription(actionLog.description());
         }
-        System.out.println("调用日志存储接口 start");
+        // 存操作日志
         baseServerFeign.addActionLog(logVo);
-        System.out.println("调用日志存储接口 end");
     }
 
     /**
@@ -50,9 +48,6 @@ public class ActionLogAspect {
      */
     @AfterReturning("pointcut() && @annotation(actionLog)")
     public void afterReturning(final JoinPoint joinPoint, ActionLog actionLog) {
-        System.out.println("接口返回后执行");
-        if(!Objects.isNull(actionLog)){
-            System.out.println(actionLog.description());
-        }
+
     }
 }

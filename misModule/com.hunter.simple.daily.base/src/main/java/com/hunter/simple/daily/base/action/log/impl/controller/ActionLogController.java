@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
  * @author Administrator
  * @date 2020/10/5
  **/
-@CrossOrigin
 @RestController
 @RequestMapping("/action/log")
 public class ActionLogController extends HunterBaseController<IActionLogService> {

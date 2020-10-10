@@ -7,7 +7,6 @@ import lombok.Data;
  * @author Administrator
  * @date 2020/8/28
  **/
-@Data
 public class ActionLogVo extends HunterBaseVo {
 
     /**
@@ -24,4 +23,28 @@ public class ActionLogVo extends HunterBaseVo {
      * 接口描述
      */
     private String description;
+
+    public String getUserGid() {
+        return userGid;
+    }
+
+    public void setUserGid(String userGid) {
+        this.userGid = userGid;
+    }
+
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

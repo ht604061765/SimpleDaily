@@ -10,7 +10,6 @@ import javax.persistence.Table;
  * @author Administrator
  * @date 2020/10/5
  **/
-@Data
 @Entity
 @Table(name = "T_ACTION_LOG")
 public class ActionLog extends HunterBasePo {
@@ -30,6 +29,27 @@ public class ActionLog extends HunterBasePo {
      */
     private String description;
 
+    public String getUserGid() {
+        return userGid;
+    }
 
+    public void setUserGid(String userGid) {
+        this.userGid = userGid;
+    }
 
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
  **/
 @CrossOrigin
 @RestController
-@RequestMapping("/weight/record")
+@RequestMapping("/record")
 public class WeightRecordController extends HunterBaseController<IWeightRecordService> {
 
     @ActionLog(description = "新增体重数据")

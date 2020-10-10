@@ -29,9 +29,9 @@ public class ActionLogService extends HunterBaseService implements IActionLogSer
     public void addActionLog(ActionLogVo vo){
         ActionLog actionLog = new ActionLog();
         BeanUtils.copyProperties(vo, actionLog);
+        actionLog.setCreateTime(System.currentTimeMillis());
         actionLog.setGid(RandomUtils.getUUID());
         actionLogDao.save(actionLog);
-        System.out.println("调用成功！");
     }
 
 

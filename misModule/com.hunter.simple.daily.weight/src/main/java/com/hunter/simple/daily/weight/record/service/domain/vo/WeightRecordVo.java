@@ -12,13 +12,28 @@ import java.math.BigDecimal;
 @Data
 public class WeightRecordVo extends HunterBaseVo {
 
+    /**
+     * 体重
+     */
     private BigDecimal weight;
 
+    /**
+     * 描述
+     */
     private String remark;
 
+    /**
+     * 创建时间
+     */
     private Long createTime;
 
+    /**
+     * 创建人
+     */
     private String createUserGid;
 
+    /**
+     * 创建人名称
+     */
     private String createUserName;
 }

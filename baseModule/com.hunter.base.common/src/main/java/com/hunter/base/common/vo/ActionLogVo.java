@@ -1,5 +1,6 @@
 package com.hunter.base.common.vo;
 
+import com.hunter.base.common.enumerate.FunctionModuleEnum;
 import com.hunter.base.common.vo.HunterBaseVo;
 import lombok.Data;
 
@@ -8,6 +9,11 @@ import lombok.Data;
  * @date 2020/8/28
  **/
 public class ActionLogVo extends HunterBaseVo {
+
+    /**
+     * 模块
+     */
+    FunctionModuleEnum module;
 
     /**
      * 操作人
@@ -46,5 +52,13 @@ public class ActionLogVo extends HunterBaseVo {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public FunctionModuleEnum getModule() {
+        return module;
+    }
+
+    public void setModule(FunctionModuleEnum module) {
+        this.module = module;
     }
 }

@@ -1,9 +1,12 @@
 package com.hunter.simple.daily.base.action.log.service.domain.po;
 
+import com.hunter.base.common.enumerate.FunctionModuleEnum;
 import com.hunter.base.common.po.HunterBasePo;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 /**
@@ -13,6 +16,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "T_ACTION_LOG")
 public class ActionLog extends HunterBasePo {
+
+    /**
+     * 模块
+     */
+    FunctionModuleEnum module;
 
     /**
      * 操作人
@@ -51,5 +59,13 @@ public class ActionLog extends HunterBasePo {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public FunctionModuleEnum getModule() {
+        return module;
+    }
+
+    public void setModule(FunctionModuleEnum module) {
+        this.module = module;
     }
 }

@@ -21,6 +21,7 @@
         <module>com.hunter.simple.daily.web</module>
         <module>com.hunter.simple.daily.eureka</module>
         <module>com.hunter.simple.daily.zuul</module>
+        <module>com.hunter.simple.daily.jobLog</module>
     </modules>
 
     <dependencies>

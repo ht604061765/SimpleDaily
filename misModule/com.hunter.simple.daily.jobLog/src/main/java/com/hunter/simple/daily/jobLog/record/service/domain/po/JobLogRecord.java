@@ -31,6 +31,11 @@ public class JobLogRecord extends HunterBasePo {
     private String userGid;
 
     /**
+     * 摘要
+     */
+    private String summary;
+
+    /**
      * 描述
      */
     private String description;
@@ -66,5 +71,13 @@ public class JobLogRecord extends HunterBasePo {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 }

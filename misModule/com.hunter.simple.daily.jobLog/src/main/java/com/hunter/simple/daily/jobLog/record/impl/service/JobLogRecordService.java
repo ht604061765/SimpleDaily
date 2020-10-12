@@ -32,14 +32,18 @@ public class JobLogRecordService extends HunterBaseService implements IJobLogRec
     @Autowired
     private BaseServerFeign baseServerFeign;
 
+
+    @Override
+    public Boolean deleteRecordBygGid(String gid) {
+        jobLogRecordDao.deleteById(gid);
+        return true;
+    }
+
     @Override
     public JobLogRecordVo addJobLogRecord(JobLogRecordVo vo) {
         JobLogRecord jobLogRecord = new JobLogRecord();
         BeanUtils.copyProperties(vo,jobLogRecord);
         jobLogRecord.setGid(RandomUtils.getUUID());
-        if(Objects.isNull(jobLogRecord.getCreateTime())){
-            jobLogRecord.setCreateTime(System.currentTimeMillis());
-        }
         jobLogRecordDao.save(jobLogRecord);
         return vo;
     }

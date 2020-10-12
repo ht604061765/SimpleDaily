@@ -17,9 +17,14 @@ public class JobLogRecordVo extends HunterBaseVo {
     private String type;
 
     /**
-     * 类别
+     * 类别名称
      */
     private String typeName;
+
+    /**
+     * 摘要
+     */
+    private String summary;
 
     /**
      * 创建时间
@@ -87,5 +92,13 @@ public class JobLogRecordVo extends HunterBaseVo {
 
     public void setTypeName(String typeName) {
         this.typeName = typeName;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 }

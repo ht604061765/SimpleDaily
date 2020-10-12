@@ -12,4 +12,5 @@ public interface IJobLogRecordService extends IHunterBaseService {
 
     List<JobLogRecordVo> getJobLogRecordList(JobLogRecordParamVo paramVo);
 
+    Boolean deleteRecordBygGid(String gid);
 }

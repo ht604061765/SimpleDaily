@@ -24,7 +24,7 @@ import java.util.Objects;
  * @date 2020/8/28
  **/
 @Service
-public class JobLogRecordRecordService extends HunterBaseService implements IJobLogRecordService {
+public class JobLogRecordService extends HunterBaseService implements IJobLogRecordService {
 
     @Autowired
     private IJobLogRecordDao jobLogRecordDao;

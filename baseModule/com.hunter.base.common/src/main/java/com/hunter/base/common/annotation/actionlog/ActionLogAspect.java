@@ -38,6 +38,7 @@ public class ActionLogAspect {
         ActionLogVo logVo = new ActionLogVo();
         if(!Objects.isNull(actionLog)){
             logVo.setDescription(actionLog.description());
+            logVo.setModule(actionLog.module());
         }
         // 存操作日志
         baseServerFeign.addActionLog(logVo);

@@ -20,7 +20,8 @@ public class ActionLog extends HunterBasePo {
     /**
      * 模块
      */
-    FunctionModuleEnum module;
+    @Enumerated(EnumType.STRING)
+    private FunctionModuleEnum module;
 
     /**
      * 操作人
@@ -60,6 +61,7 @@ public class ActionLog extends HunterBasePo {
     public void setDescription(String description) {
         this.description = description;
     }
+
 
     public FunctionModuleEnum getModule() {
         return module;

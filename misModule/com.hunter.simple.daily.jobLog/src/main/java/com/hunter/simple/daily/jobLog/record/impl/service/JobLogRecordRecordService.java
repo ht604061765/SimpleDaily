@@ -37,6 +37,9 @@ public class JobLogRecordRecordService extends HunterBaseService implements IJob
         JobLogRecord jobLogRecord = new JobLogRecord();
         BeanUtils.copyProperties(vo,jobLogRecord);
         jobLogRecord.setGid(RandomUtils.getUUID());
+        if(Objects.isNull(jobLogRecord.getCreateTime())){
+            jobLogRecord.setCreateTime(System.currentTimeMillis());
+        }
         jobLogRecordDao.save(jobLogRecord);
         return vo;
     }

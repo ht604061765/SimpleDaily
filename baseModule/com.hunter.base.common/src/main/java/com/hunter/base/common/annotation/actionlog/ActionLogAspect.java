@@ -9,6 +9,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,9 @@ import java.util.Objects;
 @Aspect
 @Service
 public class ActionLogAspect {
+
+    @Value("${spring.kafka.topic}")
+    private String TOPIC;
 
     @Autowired
     private BaseServerFeign baseServerFeign;
@@ -41,13 +45,13 @@ public class ActionLogAspect {
      */
     @Before("pointcut() && @annotation(actionLog)")
     public void before(final JoinPoint joinPoint, ActionLog actionLog) {
-        ActionLogVo logVo = new ActionLogVo();
-        if(!Objects.isNull(actionLog)){
-            logVo.setDescription(actionLog.description());
-            logVo.setModule(actionLog.module());
-        }
-        // 存操作日志
-        baseServerFeign.addActionLog(logVo);
+//        ActionLogVo logVo = new ActionLogVo();
+//        if(!Objects.isNull(actionLog)){
+//            logVo.setDescription(actionLog.description());
+//            logVo.setModule(actionLog.module());
+//        }
+//        // 存操作日志
+//        baseServerFeign.addActionLog(logVo);
     }
 
     /**
@@ -55,8 +59,9 @@ public class ActionLogAspect {
      */
     @AfterReturning("pointcut() && @annotation(actionLog)")
     public void afterReturning(final JoinPoint joinPoint, ActionLog actionLog) {
-        System.out.println("接口调用后事件");
         ActionLogVo logVo = new ActionLogVo();
+        // 方法名称
+        logVo.setMethodName(joinPoint.getSignature().getName());
         if(!Objects.isNull(actionLog)){
             logVo.setDescription(actionLog.description());
             logVo.setModule(actionLog.module());
@@ -64,7 +69,7 @@ public class ActionLogAspect {
         // kafka 调用
         String msg = JSON.toJSONString(logVo) ;
         // 这里Topic如果不存在，会自动创建
-        kafkaTemplate.send("hunter-topic", msg);
+        kafkaTemplate.send(TOPIC, msg);
 
     }
 }

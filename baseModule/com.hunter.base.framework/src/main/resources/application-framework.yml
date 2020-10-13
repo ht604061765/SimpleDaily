@@ -33,6 +33,7 @@ spring:
       ddl-auto: update
   kafka:
     bootstrap-servers: 192.168.11.10:9092
+    topic: hunter-test-topic
 feign:
   hystrix:
     enabled: false

@@ -38,6 +38,11 @@ public class ActionLog extends HunterBasePo {
      */
     private String description;
 
+    /**
+     * 接口名称
+     */
+    private String methodName;
+
     public String getUserGid() {
         return userGid;
     }
@@ -69,5 +74,13 @@ public class ActionLog extends HunterBasePo {
 
     public void setModule(FunctionModuleEnum module) {
         this.module = module;
+    }
+
+    public String getMethodName() {
+        return methodName;
+    }
+
+    public void setMethodName(String methodName) {
+        this.methodName = methodName;
     }
 }

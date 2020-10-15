@@ -18,6 +18,7 @@ import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * @author Administrator
@@ -72,5 +73,17 @@ public class JobLogRecordService extends HunterBaseService implements IJobLogRec
             result.add(vo);
         }
         return result;
+    }
+
+    @Override
+    public JobLogRecordVo findByGid(String gid) {
+        Optional<JobLogRecord> jobLogRecord = jobLogRecordDao.findById(gid);
+        if(jobLogRecord.isPresent()){
+            JobLogRecordVo jobLogRecordVo = new JobLogRecordVo();
+            BeanUtils.copyProperties(jobLogRecord.get(), jobLogRecordVo);
+            return jobLogRecordVo;
+        }else{
+            throw new RuntimeException("未找到对应数据");
+        }
     }
 }

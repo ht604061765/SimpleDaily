@@ -36,4 +36,10 @@ public class JobLogRecordController extends HunterBaseController<IJobLogRecordSe
         return CommonResult.SUCCESS(getService().deleteRecordBygGid(gid));
     }
 
+    @ActionLog(module = FunctionModuleEnum.JOB_LOG, description = "查询一条工作日志数据")
+    @GetMapping("/findByGid")
+    public CommonResult findByGid(@RequestParam String gid){
+        return CommonResult.SUCCESS(getService().findByGid(gid));
+    }
+
 }

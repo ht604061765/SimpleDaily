@@ -2,7 +2,7 @@ package com.hunter.base.common.enumerate;
 
 /**
  * 数据状态.
- * @author hantao
+ * @author Hunter
  * @date 2020/08/19
  */
 public enum FunctionModuleEnum {

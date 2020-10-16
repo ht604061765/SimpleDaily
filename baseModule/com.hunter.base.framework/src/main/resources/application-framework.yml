@@ -1,3 +1,7 @@
+# ActionLog 生产者消息开关
+action:
+  log:
+    open: true
 # 通用数据源配置
 spring:
   datasource:
@@ -32,7 +36,6 @@ spring:
     hibernate:
       ddl-auto: update
   kafka:
-    bootstrap-servers: 192.168.11.10:9092
     topic: hunter-test-topic
 feign:
   hystrix:

@@ -2,6 +2,23 @@
 action:
   log:
     open: true
+# mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/config/mybatis-config-local.xml
+  global-config:
+    refresh: false
+    banner: true
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      column-underline: true
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    cache-enabled: false
 # 通用数据源配置
 spring:
   datasource:

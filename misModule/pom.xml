@@ -22,6 +22,7 @@
         <module>com.hunter.simple.daily.eureka</module>
         <module>com.hunter.simple.daily.zuul</module>
         <module>com.hunter.simple.daily.jobLog</module>
+        <module>com.hunter.simple.daily.test</module>
     </modules>
 
     <dependencies>
